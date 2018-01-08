@@ -30,18 +30,16 @@ class FiguresController < ApplicationController
  +    #  end
  +    #end
  +
- +    @figure.landmark_ids = params["figure"]["landmark_ids"]
- +
- +    if !params["landmark"]["name"].empty?
- +      @figure.landmarks << Landmark.find_or_create_by(name: params["landmark"]["name"])
- +    end
- +
- +    @figure.save
- +    redirect "/figures/#{@figure.id}"
- +  end
- +
- +  get '/figures/:id' do
- +    @figure = Figure.find(params[:id])
+     @figure.landmark_ids = params["figure"]["landmark_ids"]
+     if !params["landmark"]["name"].empty?
+       @figure.landmarks << Landmark.find_or_create_by(name: params["landmark"]["name"])
+     end
+     @figure.save
+     redirect "/figures/#{@figure.id}"
+   end
+
+   get '/figures/:id' do
+     @figure = Figure.find(params[:id])
      erb :'/figures/show'
    end
 
