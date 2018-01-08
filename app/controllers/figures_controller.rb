@@ -38,7 +38,7 @@ class FiguresController < ApplicationController
      @figure.titles << Title.find_or_create_by(name: params["title"]["name"])
      @figure.landmarks << Landmark.find_or_create_by(name: params["landmarks"]["name"])
      @figure.save
-        redirect "/figures/#{@figure.id}"
+     redirect "/figures/#{@figure.id}"
    end
 
 end
