@@ -37,7 +37,8 @@ class FiguresController < ApplicationController
    post '/figures/:id' do
      @figure = Figure.find(params[:id])
      @figure.update(params[:figure])
-     @figure.titles << Title.find_or_create_by(name: params["title"])
+     @figure.titles << Title.find_or_create_by(name: params["title"]["name"])
+     @figure.landmarks << Landmark.find_or_create_by(name: params["landmarks"]["name"])
    end
 
 end
