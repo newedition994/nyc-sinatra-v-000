@@ -1,5 +1,5 @@
 <h1>Edit <%=@figure.name%></h1>
-<form method="POST" action="/figures/<%=@figure.id%>">
+<form method="post" action="/figures/<%=@figure.id%>">
   <h2>Edit Name: </h2><br>
   <label for="figure_name">Name</label>
   <input type="text" name="figure[name]" id="figure_name" value="<%=@figure.name%>"><br>
