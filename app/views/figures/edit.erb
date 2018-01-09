@@ -14,7 +14,7 @@
   <input type="text" name="title[name]" id="new_title"><br>
 
   <h2>Select Landmarks: </h2><br>
-  <%Landmark.all.each do |Landmark| %>
+  <%Landmark.all.each do |landmark| %>
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark)%>><%=landmark.name%></input>
   <%end%>
 
