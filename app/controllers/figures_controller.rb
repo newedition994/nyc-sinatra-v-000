@@ -26,7 +26,6 @@ class FiguresController < ApplicationController
 
    get '/figures/:id' do
      @figure = Figure.find_by_id(params[:id])
-     binding.pry
      erb :'/figures/show'
    end
 
