@@ -35,6 +35,7 @@ class FiguresController < ApplicationController
    end
 
    post '/figures/:id' do
+     byebug
      @figure = Figure.find(params[:id])
      @figure.update(params[:figure])
      @figure.titles << Title.find_or_create_by(name: params["title"]["name"])
